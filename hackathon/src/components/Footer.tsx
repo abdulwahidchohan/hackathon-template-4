@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
         </div>
         <div className='px-5 lg:px-40 py-5 bg-[#e7e4f8] flex justify-between items-center'>
-            <p className='text-[#8A8FB9]'>Tafzeel - All right reserved</p>
+            <p className='text-[#8A8FB9]'>Abdul Wahid - All right reserved</p>
             <div className="flex justify-end gap-2">
                 <div className='flex justify-center items-center bg-[#151875] rounded-full size-5'>
                     <FaFacebookF color='white' size={12} />
