@@ -1,4 +1,5 @@
 import React from 'react';
+import CategoryFilter from "../components/CategoryFilter";
 import Categories from "@/components/Categories";
 import Companies from "@/components/Companies";
 import FeaturedProducts from "@/components/FeaturedProducts";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
    <>
     <Hero />
+    <CategoryFilter />
     <FeaturedProducts />
     <LatestProducts />
     <SupportCard />

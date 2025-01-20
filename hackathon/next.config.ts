@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'next-ecommerce-template-4.vercel.app',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 };
-
-export default nextConfig;

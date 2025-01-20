@@ -1,122 +1,173 @@
-import Companies from '@/components/Companies'
-import MainHeader from '@/components/MainHeader'
-import PRDesignRelated1 from '@/components/mini/PRDesignRelated1'
-import PRDesignRelated2 from '@/components/mini/PRDesignRelated2'
-import PRDesignRelated3 from '@/components/mini/PRDesignRelated3'
-import PRDesignRelated4 from '@/components/mini/PRDesignRelated4'
-import Image from 'next/image'
-import React from 'react'
-import { FaArrowRight, FaCircle, FaFacebookF, FaHeart, FaInstagram, FaStar, FaTwitter } from 'react-icons/fa'
+"use client"
 
-const ProductDetail = () => {
-    return (
-        <div className='w-full'>
-            <MainHeader title='Product Details' current='Product Details' prev='Home . Pages . ' />
-            <div className='w-full px-5 lg:px-56 py-20'>
-                <div className="grid grid-cols-3 md:grid-cols-7 gap-3 rounded-md shadow-lg shadow-gray-200 border-2 border-gray-100">
-                    <div className="flex flex-col gap-2">
-                        <Image src={"/product1side.jpg"} width={120} height={120} alt='product' />
-                        <Image src={"/product2side.jpg"} width={120} height={120} alt='product' />
-                        <Image src={"/product3side.jpg"} width={120} height={120} alt='product' />
-                    </div>
-                    <div className='col-span-2 flex justify-center items-center bg-white'>
-                        <Image src={"/product1main.jpg"} width={420} height={520} alt='product' className='col-span-2' />
-                    </div>
-                    <div className=' flex flex-col gap-3 p-5 col-span-4'>
-                        <h2 className='text-4xl text-[#0D134E] font-semibold font-josefin-sans'>Playwood arm chair</h2>
-                        <div className='flex justify-start items-center gap-2'>
-                            <div className="flex justify-start items-center gap-1 text-sm">
-                                <FaStar className='text-[#FFC416]' />
-                                <FaStar className='text-[#FFC416]' />
-                                <FaStar className='text-[#FFC416]' />
-                                <FaStar className='text-[#FFC416]' />
-                                <FaStar className='text-gray-400' />
-                                <p className='text-black text-sm font-josefin-sans'>(22)</p>
-                            </div>
-                        </div>
-                        <p className='font-josefin-sans text-[#151875] flex justify-start items-center gap-3'>$32.00 <span className='text-red line-through'>$64.00</span></p>
-                        <p className='flex justify-start items-center gap-3 font-semibold text-[#151875] font-josefin-sans'>Color: <span className='flex justify-start items-center gap-2'><FaCircle size={15} color={"pink"} /><FaCircle size={15} color={"red"} /><FaCircle size={15} color={"green"} /></span></p>
-                        <p className='text-gray-400 font-semibold font-josefin-sans'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus porttitor purus, et volutpat sit.</p>
-                        <div className='flex justify-start items-center'>
-                            <button className='px-6 py-2 text-[#151875] font-semibold bg-white rounded-md hover:bg-[#151875] hover:text-white'>Add to Cart</button>
-                            <button className='px-6 py-2 text-navyBlue font-semibold bg-white rounded-md hover:bg-pink hover:text-white'><FaHeart /></button>
-                        </div>
-                        <div className='flex justify-start items-center gap-3'>
-                            <p className='font-semibold text-[#151875] font-josefin-sans'>Categories:</p>
-                            <p className='font-semibold text-gray-500 font-josefin-sans'>Bags</p>
-                        </div>
-                        <div className='flex justify-start items-center gap-3'>
-                            <p className='font-semibold text-[#151875] font-josefin-sans'>Tags:</p>
-                        </div>
-                        
-                        <div className='flex justify-start items-center gap-3'>
-                            <p className='font-semibold text-[#151875] font-josefin-sans'>Share</p>
-                            <div className='flex justify-end items-center  gap-2'>
-           <div className='flex justify-center cursor-pointer  items-center bg-[#151875] size-5 rounded-full text-white'>
-            <FaFacebookF />
-           </div>
-           <div className='flex justify-center  cursor-pointer items-center bg-[#fb2e86] size-5 rounded-full text-white'>
-            <FaInstagram />
-           </div>
-           <div className='flex justify-center  cursor-pointer items-center bg-[#37DAF3] size-5 rounded-full text-white'>
-            <FaTwitter />
-           </div>
-        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='bg-[#F9f8fe] w-full px-5 md:px-10 lg:px-40 py-10'>
-                <div className='flex flex-wrap gap-3 md:gap-7 justify-start items-center lg:gap-20'>
-                    <h3 className='text-2xl text-[#151875] font-semibold font-josefin-sans underline'>Description</h3>
-                    <h3 className='text-2xl text-[#151875] font-semibold font-josefin-sans'>Additional Info</h3>
-                    <h3 className='text-2xl text-[#151875] font-semibold font-josefin-sans'>Reviews</h3>
-                    <h3 className='text-2xl text-[#151875] font-semibold font-josefin-sans'>Video</h3>
-                </div>
-                <div className='py-5'>
-                    <h2 className='text-2xl text-[#151875] font-semibold font-josefin-sans py-3'>Lorem, ipsum.</h2>
-                    <p className='text-gray-600 font-normal'>Aliquam dis vulputate vulputate integer sagittis. Faucibus dolor ornare faucibus vel sed et eleifend habitasse amet. Montes, mauris varius ac est bibendum. Scelerisque a, risus ac ante. Velit consectetur neque, elit, aliquet. Non varius proin sed urna, egestas consequat laoreet diam tincidunt. Magna eget faucibus cras justo, tortor sed donec tempus. Imperdiet consequat, quis diam arcu, nulla lobortis justo netus dis. </p>
-                    <h2 className='text-2xl text-[#151875] font-semibold font-josefin-sans py-3'>More Details</h2>
-                    <div className='flex justify-start items-center gap-2'>
-                        <FaArrowRight size={16}  className='text-[#151875] hover:text-navyBlue' />
-                        <p className="text-gray-500">Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. </p>
-                    </div>
-                    <div className='flex justify-start items-center gap-2'>
-                        <FaArrowRight size={16}  className=' text-[#151875] hover:text-navyBlue' />
-                        <p className="text-gray-500">Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. </p>
-                    </div>
-                    <div className='flex justify-start items-center gap-2'>
-                        <FaArrowRight size={16}  className=' text-[#151875] hover:text-navyBlue' />
-                        <p className="text-gray-500">Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. </p>
-                    </div>
-                    <div className='flex justify-start items-center gap-2'>
-                        <FaArrowRight size={16}  className=' text-[#151875] hover:text-navyBlue' />
-                        <p className="text-gray-500">Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. </p>
-                    </div>
-                    <div className='flex justify-start items-center gap-2'>
-                        <FaArrowRight size={16}  className=' text-[#151875] hover:text-navyBlue' />
-                        <p className="text-gray-500">Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis. </p>
-                    </div>
-                    <div className='flex justify-start items-center gap-2'>
-                        <FaArrowRight size={16} className=' text-[#151875] hover:text-navyBlue' />
-                        <p className="text-gray-500">Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo netus dis.</p>
-                    </div>
+import Image from "next/image"
+import { Star, ArrowRight, Heart, Facebook, Instagram, Twitter, Circle } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-                </div>
-            </div>
-            <div className='bg-white w-full px-5 lg:px-40 py-10'>
-                <h1 className='text-4xl font-semibold text-[#151875] font-josefin-sans py-10 pb-20'>Related Products</h1>
-                <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-10">
-                    <PRDesignRelated1 />
-                    <PRDesignRelated2 />
-                    <PRDesignRelated3 />
-                    <PRDesignRelated4 />
-                   
-                </div>
-            </div>
-            <Companies />
+export default function ProductDetail() {
+  return (
+    <div className="w-full">
+      <header className="bg-slate-50 py-8">
+        <div className="container">
+          <h1 className="text-2xl font-semibold text-primary">Product Details</h1>
+          <p className="text-muted-foreground">
+            Home . Pages . <span className="text-primary">Product Details</span>
+          </p>
         </div>
-    )
+      </header>
+
+      <div className="container py-20">
+        <Card className="grid grid-cols-1 md:grid-cols-7 gap-6 p-6">
+          {/* Thumbnail Images */}
+          <div className="flex md:flex-col gap-4">
+            {[1, 2, 3].map((num) => (
+              <div key={num} className="relative aspect-square w-20 rounded-lg overflow-hidden">
+                <Image
+                  src={`/placeholder.svg?height=120&width=120`}
+                  alt={`Product view ${num}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Main Image */}
+          <div className="col-span-2 flex justify-center items-center">
+            <div className="relative aspect-[4/5] w-full max-w-md">
+              <Image
+                src="/placeholder.svg?height=520&width=420"
+                alt="Product main view"
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+          </div>
+
+          {/* Product Info */}
+          <div className="col-span-4 space-y-6">
+            <h2 className="text-4xl font-semibold text-primary">Playwood arm chair</h2>
+
+            <div className="flex items-center gap-2">
+              <div className="flex">
+                {[...Array(4)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                ))}
+                <Star className="w-4 h-4 text-muted-foreground" />
+              </div>
+              <span className="text-sm text-muted-foreground">(22)</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="text-xl font-semibold text-primary">$32.00</span>
+              <span className="text-sm text-red-500 line-through">$64.00</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="font-semibold text-primary">Color:</span>
+              <div className="flex gap-2">
+                {["pink", "red", "green"].map((color) => (
+                  <Circle key={color} className={`w-4 h-4 fill-${color}-500 text-${color}-500`} />
+                ))}
+              </div>
+            </div>
+
+            <p className="text-muted-foreground">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus porttitor purus, et volutpat sit.
+            </p>
+
+            <div className="flex gap-3">
+              <Button>Add to Cart</Button>
+              <Button variant="outline" size="icon">
+                <Heart className="h-4 w-4" />
+              </Button>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex gap-3">
+                <span className="font-semibold text-primary">Categories:</span>
+                <span className="text-muted-foreground">Bags</span>
+              </div>
+
+              <div className="flex gap-3">
+                <span className="font-semibold text-primary">Share:</span>
+                <div className="flex gap-2">
+                  <Button variant="outline" size="icon" className="rounded-full h-6 w-6">
+                    <Facebook className="h-3 w-3" />
+                  </Button>
+                  <Button variant="outline" size="icon" className="rounded-full h-6 w-6">
+                    <Instagram className="h-3 w-3" />
+                  </Button>
+                  <Button variant="outline" size="icon" className="rounded-full h-6 w-6">
+                    <Twitter className="h-3 w-3" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      <div className="bg-slate-50 py-10">
+        <div className="container">
+          <Tabs defaultValue="description">
+            <TabsList>
+              <TabsTrigger value="description">Description</TabsTrigger>
+              <TabsTrigger value="additional">Additional Info</TabsTrigger>
+              <TabsTrigger value="reviews">Reviews</TabsTrigger>
+              <TabsTrigger value="video">Video</TabsTrigger>
+            </TabsList>
+            <TabsContent value="description" className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-semibold text-primary mb-4">Lorem, ipsum.</h3>
+                <p className="text-muted-foreground">
+                  Aliquam dis vulputate vulputate integer sagittis. Faucibus dolor ornare faucibus vel sed et eleifend
+                  habitasse amet. Montes, mauris varius ac est bibendum. Scelerisque a, risus ac ante. Velit consectetur
+                  neque, elit, aliquet.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold text-primary mb-4">More Details</h3>
+                <ul className="space-y-3">
+                  {[...Array(6)].map((_, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <ArrowRight className="h-4 w-4 text-primary" />
+                      <span className="text-muted-foreground">
+                        Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam arcu, nulla lobortis justo
+                        netus dis.
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </div>
+
+      <div className="container py-20">
+        <h2 className="text-4xl font-semibold text-primary mb-16">Related Products</h2>
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-10">
+          {[...Array(4)].map((_, i) => (
+            <Card key={i} className="p-4">
+              <div className="relative aspect-square mb-4">
+                <Image
+                  src="/placeholder.svg?height=200&width=200"
+                  alt={`Related product ${i + 1}`}
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+              <h3 className="font-semibold">Related Product {i + 1}</h3>
+              <p className="text-muted-foreground">$99.00</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }
 
-export default ProductDetail
