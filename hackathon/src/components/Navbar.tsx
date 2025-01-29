@@ -3,9 +3,11 @@ import React, { useState } from "react"
 import Topbar from "./mini/Topbar"
 import Link from "next/link"
 import SearchBar from "./SearchBar"
+import { Button } from "./ui/button"
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false); // Removed duplicate declaration
+
   return (
     <div className="w-full">
       {/* Topbar */}
@@ -13,8 +15,7 @@ const Navbar = () => {
 
       {/* Navbar */}
       <nav className="w-full bg-white px-2 lg:px-40 py-4 grid grid-cols-2 lg:grid-cols-5 gap-4 justify-between items-center">
-        <div className="logo text-[34px] font-bold font-josefin-sans text-black">Hekto</div>
-
+        
         {/* Menu */}
         <div className="hidden lg:flex col-span-2 justify-start gap-4 items-center">
           <Link href={"/"} className="font-lato text-offBlue hover:underline hover:text-[#fb2e86]">

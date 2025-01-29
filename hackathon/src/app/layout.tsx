@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "next-themes";
 
 
 export const metadata: Metadata = {
@@ -11,14 +12,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
+}: {
+  children: React.ReactNode
+}) {
+  return  (
     <html lang="en">
       <body>
         <Navbar />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        ></ThemeProvider>
         {children}
+        <main className="container mx-auto p-4">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image"
 import { Slider } from "@/components/ui/slider"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -22,6 +22,7 @@ export default function CategoryFilters() {
   const [selectedStyles, setSelectedStyles] = useState<string[]>([])
   const [loading, setLoading] = useState(true)
 
+  
   useEffect(() => {
     const fetchData = async () => {
       // Simulate API call
@@ -46,24 +47,26 @@ export default function CategoryFilters() {
   const handleStyleChange = (style: string) => {
     setSelectedStyles((prev) => (prev.includes(style) ? prev.filter((s) => s !== style) : [...prev, style]))
   }
+  const applyFilters = useCallback(() => {
+    const minPrice = Number(priceRange[0]);
+    const maxPrice = Number(priceRange[1]);
+    const filtered = items.filter((item) => {
+      const categoryMatch =
+        selectedCategories.length === 0 ||
+        selectedCategories.some((cat) => item.name.toLowerCase().includes(cat.toLowerCase()));
 
-  const applyFilters = () => {
-    const filtered = items.filter(
-      (item) =>
-        (selectedCategories.length === 0 ||
-          selectedCategories.some((cat) => item.name.toLowerCase().includes(cat.toLowerCase()))) &&
-        Number.parseInt(item.price) >= priceRange[0] &&
-        Number.parseInt(item.price) <= priceRange[1],
-    )
-    setFilteredItems(filtered)
-  }
+      const priceMatch = item.price >= minPrice && item.price <= maxPrice;
+      return categoryMatch && priceMatch;
+    });
+    setFilteredItems(filtered);
+  }, [items, selectedCategories, priceRange]);
 
   useEffect(() => {
     const debounceTimeout = setTimeout(() => {
       applyFilters()
     }, 300)
     return () => clearTimeout(debounceTimeout)
-  }, [selectedCategories, priceRange, selectedStyles])
+  }, [applyFilters])
 
   const clearFilters = () => {
     setSelectedCategories([])
@@ -170,7 +173,7 @@ export default function CategoryFilters() {
                     <CardTitle className="line-clamp-1">{item.name}</CardTitle>
                     <CardDescription className="line-clamp-2 mt-2">{item.description}</CardDescription>
                     <div className="mt-4 flex items-center justify-between">
-                      <p className="text-2xl font-bold">${Number.parseInt(item.price).toLocaleString()}</p>
+                    <p className="text-2xl font-bold">${item.price.toLocaleString()}</p>
                       {item.discountPercentage > 0 && (
                         <Badge variant="destructive">{item.discountPercentage}% OFF</Badge>
                       )}
