@@ -1,4 +1,4 @@
-import { shipEngine } from "@/helper/shipEngine";
+import { shipEngine } from "@/app/lib/helper/shipEngine";
 import { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -32,6 +32,7 @@ export async function POST(req: NextRequest) {
 
     return new Response(JSON.stringify(shipmentDetails), { status: 200 });
   } catch (error) {
-    return new Response(JSON.stringify({ error: error.message }), { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    return new Response(JSON.stringify({ error: errorMessage }), { status: 500 });
   }
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const ShipEngineComponent = () => {
-  const [shipToAddress, setShipToAddress] = useState({
+  const [shipToAddress] = useState({
     name: "Michael Smith",
     phone: "+1 555 987 6543",
     addressLine1: "456 Oak Avenue",
@@ -13,7 +13,7 @@ const ShipEngineComponent = () => {
     addressResidentialIndicator: "no",
   });
 
-  const [packages, setPackages] = useState([
+  const [packages] = useState([
     {
       weight: { value: 5, unit: "ounce" },
       dimensions: { height: 3, width: 15, length: 10, unit: "inch" },
@@ -58,7 +58,7 @@ const ShipEngineComponent = () => {
 
   const trackShipment = async (labelId: string) => {
     try {
-      const response = await fetch(/api/shipengine/tracking/${labelId}, {
+      const response = await fetch(`/api/shipengine/tracking/${labelId}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

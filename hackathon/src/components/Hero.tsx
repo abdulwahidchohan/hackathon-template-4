@@ -10,7 +10,7 @@ const Hero = () => {
             {/* Right Side Content */}
             <div className='flex w-full md:w-1/2 flex-col items-start gap-4 py-10 md:ml-16 md:py-0'>
                 <p className='text-[#fb2e86] font-lato font-bold'>Best Furniture For Your Castle....</p>
-                <h1 className='font-bold text-black text-5xl lg:text-[55px] font-josefin-sans leading-tight'>New Furniture Collection Trends in 2020</h1>
+                <h1 className='font-bold text-black text-5xl lg:text-[55px] font-josefin-sans leading-tight'>New Furniture Collection Trends in 2025</h1>
                 <p className='text-offNavyBlue font-lato'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
                 <Link href={"/shop"} className='px-8 md:px-4 py-2 text-center bg-[#fb2e86] text-white font-josefin-sans font-semibold'>Shop Now</Link>
             </div>

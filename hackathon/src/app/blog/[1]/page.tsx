@@ -21,7 +21,7 @@ const SingleBlog = () => {
                         <div className='flex justify-start gap-4'>
                             <div className="flex justify-start items-center gap-1">
                                 <FaPenNib className='text-[#fb2e86] size-3' />
-                                <p className={`font-josefin-sans text-[#151875] text-sm bg-pink-100 px-2 `}>Tafzeel</p>
+                                <p className={`font-josefin-sans text-[#151875] text-sm bg-pink-100 px-2 `}>Abdul Wahid</p>
                             </div>
                             <div className="flex justify-start items-center gap-1">
                                 <SlCalender className='text-[#fb2e86] size-3' />

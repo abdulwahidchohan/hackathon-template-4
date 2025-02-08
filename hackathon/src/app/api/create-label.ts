@@ -1,14 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import shipengine from "@/lib/shipEngine";
+import { shipengine } from "@/lib/shipEngine";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     try {
       const { shipment } = req.body;
-      const label = await shipengine.shipments.createLabel(shipment); 
+      const label = await shipengine.createLabelFromShipmentDetails(shipment);
       res.status(200).json(label);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      res.status(500).json({ error: errorMessage });
     }
   } else {
     res.setHeader("Allow", ["POST"]);

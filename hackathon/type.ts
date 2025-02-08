@@ -1,15 +1,13 @@
 // Define types for the API response
-export type Address = {
-    name: string;
-    phone: string;
-    addressLine1: string;
-    addressLine2?: string;
-    cityLocality: string;
-    stateProvince: string;
-    postalCode: string;
-    countryCode: string;
-    addressResidentialIndicator: "yes" | "no";
-  };
+export interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+  color: string;
+  size: string;
+};
   export type unit = "ounce" | "gram" | "kilogram" | "pound";
   export type dimensionUnit = "inch" | "centimeter";
   

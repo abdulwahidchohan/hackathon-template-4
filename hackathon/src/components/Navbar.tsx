@@ -3,8 +3,6 @@ import React, { useState } from "react"
 import Topbar from "./mini/Topbar"
 import Link from "next/link"
 import SearchBar from "./SearchBar"
-import { Button } from "./ui/button"
-
 const Navbar = () => {
   const [open, setOpen] = useState(false); // Removed duplicate declaration
 
@@ -55,6 +53,7 @@ const Navbar = () => {
         </button>
 
         {/* Mobile Menu */}
+        <div className="z-10 absolute top-40 right-0 bg-background text-foreground backdrop:blur-md w-full h-auto flex flex-col items-center justify-start p-10 gap-3"></div>
         {open && (
           <div className="z-10 absolute top-40 right-0 bg-[#070722] backdrop:blur-md w-full h-auto flex flex-col items-center justify-start p-10 gap-3">
             <SearchBar />
@@ -86,6 +85,7 @@ const Navbar = () => {
         <div className="hidden md:flex justify-end items-center">
           <SearchBar />
         </div>
+
       </nav>
     </div>
   )

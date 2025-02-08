@@ -49,7 +49,7 @@ export default function AddressForm() {
 
             const data = await res.json();
             console.log("Response From API", data);
-        } catch (error) {
+        } catch {
             console.log("Error");
         }
     }
